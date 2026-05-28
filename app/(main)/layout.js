@@ -4,10 +4,12 @@ import Navbar from "./_components/navbar/Navbar";
 
 export default function RootLayout({ children }) {
   return (
-    <div>
-      <Navbar />
-      <main>{children}</main>
-      <MobileNavigation />
+    <div className="flex flex-col justify-between min-h-screen">
+      <div>
+        <Navbar />
+        <main>{children}</main>
+        <MobileNavigation />
+      </div>
       <Footer />
     </div>
   );
