@@ -1,21 +1,18 @@
-const HomepPage = () => {
-  return (
-    <div>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quis
-        provident veritatis sunt fuga vero rerum, rem eius sint ab. Veritatis
-        inventore dolorum harum. Ratione soluta ab magni quasi laboriosam natus
-        unde perferendis. Accusamus, vero, quibusdam iste quo dolorem ipsa
-        quisquam aspernatur molestias doloribus dicta amet illo. Deserunt sunt
-        laboriosam id porro eum quia ducimus quae est ipsum, quis perferendis
-        ratione repellendus recusandae eaque, deleniti velit, cum maxime
-        adipisci dignissimos neque expedita fugit. Magni soluta voluptas modi
-        voluptatibus alias laborum doloribus porro vero rem cupiditate itaque
-        cum tempore, voluptatum, nemo tempora illum perspiciatis suscipit saepe
-        excepturi numquam. Quos, eos pariatur!
-      </p>
-    </div>
-  );
-};
+import Image from "next/image";
 
-export default HomepPage;
+export default function Banner() {
+  return (
+    <>
+    <div className="relative w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] xl:h-[600px] overflow-hidden">
+      <Image
+        src="/pouchBanner.jpg"
+        alt="banner"
+        fill
+        priority
+        className="object-cover"
+      />
+    </div>
+    <p>You’ll love these…</p>
+    </>
+  );
+}
