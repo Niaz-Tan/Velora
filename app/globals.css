@@ -5,7 +5,6 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-
   --text-primary: #2b2b2b;
   --text-secondary: #6f6a63;
 
@@ -57,7 +56,6 @@
 }
 
 @theme inline {
-
   --font-heading: var(--font-sans);
 
   --font-sans: var(--font-sans);
@@ -140,7 +138,6 @@
 }
 
 .dark {
-
   --background: oklch(0.145 0 0);
 
   --foreground: oklch(0.985 0 0);
