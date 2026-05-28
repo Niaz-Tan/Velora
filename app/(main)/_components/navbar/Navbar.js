@@ -5,8 +5,8 @@ import Navigation from "./Navigation";
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 border-b border-[#EFE7DA] bg-white/80 backdrop-blur-md">
-      <div className="flex items-center justify-between px-4 md:px-8 h-16">
+    <header className="sticky top-0 z-50 border-b border-[#EFE7DA] backdrop-blur-md overflow-hidden">
+      <div className="flex items-center justify-between px-4 md:px-8">
         {/* LEFT */}
         <div className="flex items-center gap-8">
           <Logo />

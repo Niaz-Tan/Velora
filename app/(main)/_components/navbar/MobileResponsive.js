@@ -1,8 +1,16 @@
 "use client";
 
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 import { Bell, Heart, Menu, ShoppingCart, User } from "lucide-react";
+
 import Link from "next/link";
 
 export default function MobileResponsive() {
@@ -15,11 +23,14 @@ export default function MobileResponsive() {
         </button>
       </SheetTrigger>
 
-      {/* CONTENT (TOP TO BOTTOM STYLE) */}
+      {/* CONTENT */}
       <SheetContent side="top" className="h-screen w-full bg-white p-6">
-        {/* CLOSE ICON handled by shadcn automatically */}
+        {/* REQUIRED FOR ACCESSIBILITY */}
+        <SheetTitle asChild>
+          <VisuallyHidden>Mobile Navigation Menu</VisuallyHidden>
+        </SheetTitle>
 
-        {/* NAV */}
+        {/* NAV LINKS */}
         <div className="mt-10 space-y-4 text-lg font-medium">
           <Link href="/">Home</Link>
           <Link href="/shop">Shop</Link>
@@ -35,7 +46,7 @@ export default function MobileResponsive() {
           <User />
         </div>
 
-        {/* CTA */}
+        {/* CTA BUTTON */}
         <button className="mt-10 w-full rounded-xl bg-black py-3 text-white font-medium">
           Login
         </button>
