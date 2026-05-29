@@ -46,7 +46,8 @@ function ProductCard({ product }) {
         </div>
 
         {/* COLORS */}
-        <ColorPicker product={product}/>
+        <ColorPicker product={product} />
+        
         {/* ACTION BUTTONS */}
         <div className="flex gap-3 mt-5">
           <button className="flex-1 rounded-full bg-[#2B2B2B] py-3 text-sm font-medium text-white transition hover:bg-[#1F1F1F] cursor-pointer">
