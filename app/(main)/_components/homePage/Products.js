@@ -3,33 +3,88 @@ const products = [
   {
     id: 1,
     name: "Minimal Leather Pouch",
-    price: "$42",
+    price: 42,
+    currency: "USD",
     image: "https://picsum.photos/seed/pouch1/800/800",
     description:
       "Elegant handcrafted pouch designed for modern everyday carry.",
     colors: ["#2B2B2B", "#8B7355", "#D9C7A8"],
-    isNew: true,
+
+    type: "stock",
+    stock: 12,
+
+    totalSold: 128,
+    rating: 4.6,
+    ratingCount: 32,
+
+    reviews: [],
+
+    badges: {
+      left: [
+        { type: "new", label: "New", color: "green" },
+        { type: "best_seller", label: "Best Seller", color: "pink" },
+        { type: "hot", label: "Hot", color: "orange" },
+      ],
+      right: [
+        { type: "stock", label: "In Stock", color: "blue" },
+        { type: "stock_count", label: "12 available", color: "gray" },
+      ],
+    },
   },
 
   {
     id: 2,
     name: "Urban Travel Pack",
-    price: "$58",
+    price: 58,
+    currency: "USD",
     image: "https://picsum.photos/seed/pouch2/800/800",
     description: "Clean functional design with premium durable materials.",
     colors: ["#4A4A4A", "#C4A484", "#E8DFD1"],
-    isNew: false,
+
+    type: "made-to-order",
+    stock: null,
+
+    totalSold: 87,
+    rating: 4.2,
+    ratingCount: 19,
+
+    reviews: [],
+
+    badges: {
+      left: [],
+      right: [
+        { type: "mto", label: "MTO", color: "amber" },
+        { type: "note", label: "Production starts after order", color: "gray" },
+      ],
+    },
   },
 
   {
     id: 3,
     name: "Classic Utility Bag",
-    price: "$64",
+    price: 64,
+    currency: "USD",
     image: "https://picsum.photos/seed/pouch3/800/800",
     description:
       "Minimal silhouette crafted for everyday versatility and comfort.",
     colors: ["#000000", "#8A6A44", "#F5EFE4"],
-    isNew: true,
+
+    type: "stock",
+    stock: 5,
+
+    totalSold: 240,
+    rating: 4.8,
+    ratingCount: 54,
+
+    reviews: [],
+
+    badges: {
+      left: [{ type: "new", label: "New", color: "green" }],
+      right: [
+        { type: "stock", label: "In Stock", color: "blue" },
+        { type: "stock_count", label: "5 left", color: "red" },
+      ],
+    },
   },
 ];
 const Products = () => {

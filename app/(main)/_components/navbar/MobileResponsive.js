@@ -1,6 +1,6 @@
 "use client";
 
-import { Heart, ShoppingCart, User } from "lucide-react";
+import { Bell, ShoppingCart, User } from "lucide-react";
 import Link from "next/link";
 
 export default function MobileResponsive() {
@@ -8,7 +8,7 @@ export default function MobileResponsive() {
     <div className="flex items-center gap-4 md:hidden">
       {/* WISHLIST */}
       <Link href="/wishlist">
-        <Heart
+        <Bell
           size={22}
           className="text-[#6F6A63] transition hover:text-[#7A6A53]"
         />
