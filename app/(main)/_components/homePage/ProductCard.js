@@ -13,8 +13,8 @@ export default function ProductCard({ product }) {
     <div className="group rounded-3xl border border-[#E8DFD1] bg-[#FFFDF8] p-4 transition hover:shadow-lg">
       {/* IMAGE */}
       <div className="relative overflow-hidden rounded-2xl bg-[#F5EFE4]">
-        <div className="relative aspect-[4/4.5]">
-          <Link href={`/product/${product.id}`}>
+        <div className="relative aspect-4/4.5">
+          <Link href={`/products/${product.id}`}>
             <Image
               src={product.image}
               alt={product.name}
