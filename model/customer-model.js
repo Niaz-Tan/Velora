@@ -1,0 +1,33 @@
+import mongoose from "mongoose";
+
+const CustomerSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+
+    email: {
+      type: String,
+      lowercase: true,
+      default: "",
+    },
+
+    phone: {
+      type: String,
+      default: "",
+    },
+
+    image: {
+      type: String,
+      default: "",
+    },
+  },
+  {
+    timestamps: true,
+  },
+);
+
+export default mongoose.models.Customer ||
+  mongoose.model("Customer", CustomerSchema);

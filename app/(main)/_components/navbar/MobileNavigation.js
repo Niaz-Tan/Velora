@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { House, LayoutGrid, Phone, ShoppingBag } from "lucide-react";
+import { House, PenTool, Phone, ShoppingBag } from "lucide-react";
 
 export default function MobileNavigation() {
   const pathname = usePathname();
@@ -11,7 +11,7 @@ export default function MobileNavigation() {
   const navItems = [
     { name: "Home", href: "/", icon: House },
     { name: "Shop", href: "/shop", icon: ShoppingBag },
-    { name: "Categories", href: "/categories", icon: LayoutGrid },
+    { name: "Custom Order", href: "/custom", icon: PenTool },
     { name: "Contact", href: "/contact", icon: Phone },
   ];
 

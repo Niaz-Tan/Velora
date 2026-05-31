@@ -1,0 +1,3 @@
+const getProducts = async () => {
+    
+};
