@@ -1,8 +1,6 @@
-import { getMostSoldProduct } from "@/queries/product";
 import ProductCard from "../../../../components/ProductCard";
 const Products = async () => {
-  const products = await getMostSoldProduct();
-  // const products = await getProducts();
+  const products = await getProducts();
   return (
     <section className="px-4 py-14">
       <div className="mx-auto max-w-7xl">
