@@ -1,3 +1,4 @@
+import { getProducts } from "@/queries/product";
 import ProductCard from "../../../../components/ProductCard";
 const Products = async () => {
   const products = await getProducts();
