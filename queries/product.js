@@ -1,8 +1,15 @@
+import { Product } from "@/model/product-model";
 import { connectDB } from "@/service/mongo";
 
-const getProducts = async () => {
-  await connectDB();
+export const getProducts = async () => {
   try {
-    const products = await 
-  } catch (err) {}
+    await connectDB();
+
+    const products = await Product.find().lean();
+
+    return products;
+  } catch (error) {
+    console.error("Failed to get products:", error);
+    throw error;
+  }
 };

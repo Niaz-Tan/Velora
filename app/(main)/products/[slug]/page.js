@@ -1,6 +1,6 @@
 const Productpage = async ({ params }) => {
-  const { id } = await params;
-  return <div>{id}</div>;
+  const { slug } = await params;
+  return <div>{slug}</div>;
 };
 
 export default Productpage;

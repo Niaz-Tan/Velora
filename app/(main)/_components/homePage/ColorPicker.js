@@ -2,26 +2,25 @@
 
 import { useState } from "react";
 
-const ColorPicker = ({ product }) => {
-  const [selectedColor, setSelectedColor] = useState(product.colors?.[0] || "");
+const ColorPicker = ({ colors = [] }) => {
+  const [selectedColor, setSelectedColor] = useState(colors[0] || "");
 
   return (
-    <div className="flex items-center justify-between mt-5">
-      <div>
-        <p className="text-lg font-semibold">Select color</p>
-      </div>
+    <div className="mt-5 flex items-center justify-between">
+      <p className="text-lg font-semibold">Select color</p>
+
       <div className="flex items-center gap-3">
-        {product.colors.map((color) => {
+        {colors.map((color) => {
           const isActive = selectedColor === color;
 
           return (
             <div
               key={color}
               onClick={() => setSelectedColor(color)}
-              className="size-7 rounded-full border border-black box-border cursor-pointer"
+              className="size-7 cursor-pointer rounded-full border border-black"
             >
               <div
-                className="block w-full h-full rounded-full transition-all duration-150 border border-black"
+                className="h-full w-full rounded-full border border-black transition-all duration-150"
                 style={{
                   backgroundColor: color,
                   transform: isActive ? "scale(0.7)" : "scale(1)",

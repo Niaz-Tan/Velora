@@ -1,93 +1,96 @@
+import { getProducts } from "@/queries/product";
 import ProductCard from "./ProductCard";
-const products = [
-  {
-    id: 1,
-    name: "Minimal Leather Pouch",
-    price: 42,
-    currency: "USD",
-    image: "https://picsum.photos/seed/pouch1/800/800",
-    description:
-      "Elegant handcrafted pouch designed for modern everyday carry.",
-    colors: ["#2B2B2B", "#8B7355", "#D9C7A8"],
+// const products = [
+//   {
+//     id: 1,
+//     name: "Minimal Leather Pouch",
+//     price: 42,
+//     currency: "USD",
+//     image: "https://picsum.photos/seed/pouch1/800/800",
+//     description:
+//       "Elegant handcrafted pouch designed for modern everyday carry.",
+//     colors: ["#2B2B2B", "#8B7355", "#D9C7A8"],
 
-    type: "stock",
-    stock: 12,
+//     type: "stock",
+//     stock: 12,
 
-    totalSold: 128,
-    rating: 4.6,
-    ratingCount: 32,
+//     totalSold: 128,
+//     rating: 4.6,
+//     ratingCount: 32,
 
-    reviews: [],
+//     reviews: [],
 
-    badges: {
-      left: [
-        { type: "new", label: "New", color: "green" },
-        { type: "best_seller", label: "Best Seller", color: "pink" },
-        { type: "hot", label: "Hot", color: "orange" },
-      ],
-      right: [
-        { type: "stock", label: "In Stock", color: "blue" },
-        { type: "stock_count", label: "12 available", color: "gray" },
-      ],
-    },
-  },
+//     badges: {
+//       left: [
+//         { type: "new", label: "New", color: "green" },
+//         { type: "best_seller", label: "Best Seller", color: "pink" },
+//         { type: "hot", label: "Hot", color: "orange" },
+//       ],
+//       right: [
+//         { type: "stock", label: "In Stock", color: "blue" },
+//         { type: "stock_count", label: "12 available", color: "gray" },
+//       ],
+//     },
+//   },
 
-  {
-    id: 2,
-    name: "Urban Travel Pack",
-    price: 58,
-    currency: "USD",
-    image: "https://picsum.photos/seed/pouch2/800/800",
-    description: "Clean functional design with premium durable materials.",
-    colors: ["#4A4A4A", "#C4A484", "#E8DFD1"],
+//   {
+//     id: 2,
+//     name: "Urban Travel Pack",
+//     price: 58,
+//     currency: "USD",
+//     image: "https://picsum.photos/seed/pouch2/800/800",
+//     description: "Clean functional design with premium durable materials.",
+//     colors: ["#4A4A4A", "#C4A484", "#E8DFD1"],
 
-    type: "made-to-order",
-    stock: null,
+//     type: "made-to-order",
+//     stock: null,
 
-    totalSold: 87,
-    rating: 4.2,
-    ratingCount: 19,
+//     totalSold: 87,
+//     rating: 4.2,
+//     ratingCount: 19,
 
-    reviews: [],
+//     reviews: [],
 
-    badges: {
-      left: [],
-      right: [
-        { type: "mto", label: "MTO", color: "amber" },
-        { type: "note", label: "Production starts after order", color: "gray" },
-      ],
-    },
-  },
+//     badges: {
+//       left: [],
+//       right: [
+//         { type: "mto", label: "MTO", color: "amber" },
+//         { type: "note", label: "Production starts after order", color: "gray" },
+//       ],
+//     },
+//   },
 
-  {
-    id: 3,
-    name: "Classic Utility Bag",
-    price: 64,
-    currency: "USD",
-    image: "https://picsum.photos/seed/pouch3/800/800",
-    description:
-      "Minimal silhouette crafted for everyday versatility and comfort.",
-    colors: ["#000000", "#8A6A44", "#F5EFE4"],
+//   {
+//     id: 3,
+//     name: "Classic Utility Bag",
+//     price: 64,
+//     currency: "USD",
+//     image: "https://picsum.photos/seed/pouch3/800/800",
+//     description:
+//       "Minimal silhouette crafted for everyday versatility and comfort.",
+//     colors: ["#000000", "#8A6A44", "#F5EFE4"],
 
-    type: "stock",
-    stock: 5,
+//     type: "stock",
+//     stock: 5,
 
-    totalSold: 240,
-    rating: 4.8,
-    ratingCount: 54,
+//     totalSold: 240,
+//     rating: 4.8,
+//     ratingCount: 54,
 
-    reviews: [],
+//     reviews: [],
 
-    badges: {
-      left: [{ type: "new", label: "New", color: "green" }],
-      right: [
-        { type: "stock", label: "In Stock", color: "blue" },
-        { type: "stock_count", label: "5 left", color: "red" },
-      ],
-    },
-  },
-];
-const Products = () => {
+//     badges: {
+//       left: [{ type: "new", label: "New", color: "green" }],
+//       right: [
+//         { type: "stock", label: "In Stock", color: "blue" },
+//         { type: "stock_count", label: "5 left", color: "red" },
+//       ],
+//     },
+//   },
+// ];
+
+const Products = async () => {
+  const products = await getProducts();
   return (
     <section className="px-4 py-14">
       <div className="mx-auto max-w-7xl">
@@ -106,11 +109,18 @@ const Products = () => {
         {/* GRID */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
           {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard
+              key={product._id?.toString()}
+              product={{
+                ...product,
+                _id: product._id?.toString(),
+                category: product.category?.toString?.(),
+              }}
+            />
           ))}
 
           {/* CUSTOM PRODUCT */}
-          <div className="flex min-h-155 flex-col items-center justify-center rounded-3xl border border-dashed border-[#CBB89D] bg-[#FFFDF8] p-10 text-center">
+          <div className="flex min-h-[620px] flex-col items-center justify-center rounded-3xl border border-dashed border-[#CBB89D] bg-[#FFFDF8] p-10 text-center">
             <div className="rounded-full bg-[#F5EFE4] p-6">
               <span className="text-4xl">✨</span>
             </div>
@@ -120,12 +130,12 @@ const Products = () => {
             </h3>
 
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-[#6F6A63]">
-              Customize your perfect pouch with unique colors, compartments,
-              materials, and personalized details.
+              Customize your perfect crochet product with unique colors, sizing,
+              and personalized details.
             </p>
 
-            <button className="mt-8 rounded-full bg-[#7A6A53] px-8 py-4 text-sm font-medium text-white transition hover:bg-[#665744] cursor-pointer">
-              Build Custom Pouch
+            <button className="mt-8 cursor-pointer rounded-full bg-[#7A6A53] px-8 py-4 text-sm font-medium text-white transition hover:bg-[#665744]">
+              Build Custom Order
             </button>
           </div>
         </div>
