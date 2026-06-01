@@ -1,28 +1,65 @@
 import { Product } from "@/model/product-model";
 import { connectDB } from "@/service/mongo";
 
-export const getProducts = async () => {
+/**
+ * Get all products (optional limit)
+ */
+export const getProducts = async (limit) => {
   try {
     await connectDB();
 
-    const products = await Product.find().lean();
+    let query = Product.find().lean();
 
-    return products;
+    if (limit) {
+      query = query.limit(limit);
+    }
+
+    return await query;
   } catch (error) {
     console.error("Failed to get products:", error);
     throw error;
   }
 };
 
-export const getMostSoldProduct = async () => {
+/**
+ * Get most sold products (optional limit)
+ */
+export const getMostSoldProduct = async (limit) => {
   try {
     await connectDB();
 
-    const products = await Product.find().lean().sort({ totalSold: -1 });
+    let query = Product.find().lean().sort({ totalSold: -1 }); // highest sold first
 
-    return products;
+    if (limit) {
+      query = query.limit(limit);
+    }
+
+    return await query;
   } catch (error) {
-    console.error("Failed to get products:", error);
+    console.error("Failed to get most sold products:", error);
     throw error;
   }
 };
+
+export const getProductsByDate = async (sort = "new", limit) => {
+  try {
+    await connectDB();
+
+    const sortOption =
+      sort === "old"
+        ? { createdAt: 1 } // oldest first
+        : { createdAt: -1 }; // newest first (default)
+
+    let query = Product.find().lean().sort(sortOption);
+
+    if (limit) {
+      query = query.limit(limit);
+    }
+
+    return await query;
+  } catch (error) {
+    console.error("Failed to get products by date:", error);
+    throw error;
+  }
+};
+
