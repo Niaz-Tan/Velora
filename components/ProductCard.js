@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import ColorPicker from "./ColorPicker";
+import ColorPicker from "../app/(main)/_components/homePage/ColorPicker";
 
 export default function ProductCard({ product }) {
   if (!product) return null;

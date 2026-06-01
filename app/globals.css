@@ -2,55 +2,29 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-/* @custom-variant dark (&:is(.dark *));
+/* =====  Scrollbar ===== */
 
-:root {
-  --text-primary: #2b2b2b;
-  --text-secondary: #6f6a63;
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
 
-  --card-bg: #fffdf8;
-  --border: oklch(0.922 0 0);
+::-webkit-scrollbar-track {
+  background: transparent;
+}
 
-  --primary: oklch(0.205 0 0);
-  --primary-hover: #665744;
+::-webkit-scrollbar-thumb {
+  background: rgba(122, 106, 83, 0.35); /* soft theme brown */
+  border-radius: 999px;
+  transition: background 0.3s ease;
+}
 
-  --link: #8a6a44;
-  --link-hover: #6e5335;
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(122, 106, 83, 0.7);
+}
 
-  --button-text: #ffffff;
-
-  --section-muted: #f5efe4;
-
-  --success: #4d7c5a;
-  --error: #b45c5c;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-} */
+/* Firefox support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(122, 106, 83, 0.35) transparent;
+}
