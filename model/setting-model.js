@@ -63,5 +63,5 @@ const SettingsSchema = new mongoose.Schema(
   },
 );
 
-export default mongoose.models.Settings ||
-  mongoose.model("Settings", SettingsSchema);
+export const Settings =
+  mongoose.models.Settings || mongoose.model("Settings", SettingsSchema);

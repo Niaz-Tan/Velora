@@ -50,7 +50,7 @@ const ProductSchema = new mongoose.Schema(
 
     type: {
       type: String,
-      enum: ["stock", "made-to-order"],
+      enum: ["stock", "made-to-order", "unavalable"],
       default: "stock",
     },
 
@@ -94,5 +94,5 @@ const ProductSchema = new mongoose.Schema(
   },
 );
 
-export default mongoose.models.Product ||
-  mongoose.model("Product", ProductSchema);
+export const Product =
+  mongoose.models.Product || mongoose.model("Product", ProductSchema);
