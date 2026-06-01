@@ -13,3 +13,16 @@ export const getProducts = async () => {
     throw error;
   }
 };
+
+export const getMostSoldProduct = async () => {
+  try {
+    await connectDB();
+
+    const products = await Product.find().lean().sort({ totalSold: -1 });
+
+    return products;
+  } catch (error) {
+    console.error("Failed to get products:", error);
+    throw error;
+  }
+};
