@@ -62,5 +62,3 @@ export const getProductsByDate = async (sort = "new", limit) => {
     throw error;
   }
 };
-
-
