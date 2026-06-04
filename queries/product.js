@@ -45,10 +45,7 @@ export const getProductsByDate = async (sort = "new", limit) => {
   try {
     await connectDB();
 
-    const sortOption =
-      sort === "old"
-        ? { createdAt: 1 } // oldest first
-        : { createdAt: -1 }; // newest first (default)
+    const sortOption = sort === "old" ? { createdAt: 1 } : { createdAt: -1 };
 
     let query = Product.find().lean().sort(sortOption);
 

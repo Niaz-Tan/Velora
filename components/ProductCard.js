@@ -2,15 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import ColorPicker from "../app/(main)/_components/homePage/ColorPicker";
 
-export default function ProductCard({ product }) {
+export default function ProductCard({ product, avarageSell }) {
   if (!product) return null;
 
   const isStock = product.type === "stock";
-  const isBestSeller = product.totalSold >= 100;
+  const isBestSeller = product.totalSold >= avarageSell;
 
   const stock = product.stock ?? 0;
   const isLowStock = isStock && stock <= 5;
-
   return (
     <div className="group rounded-3xl border border-[#E8DFD1] bg-[#FFFDF8] p-4 transition hover:shadow-lg">
       {/* IMAGE */}

@@ -1,7 +1,9 @@
+import { avgSelling } from "@/lib/avgSelling";
 import { getProducts } from "@/queries/product";
 import ProductCard from "../../../../components/ProductCard";
 const Products = async () => {
   const products = await getProducts();
+  const avarageSell = avgSelling(products);
   return (
     <section className="px-4 py-14">
       <div className="mx-auto max-w-7xl">
@@ -27,6 +29,7 @@ const Products = async () => {
                 _id: product._id?.toString(),
                 category: product.category?.toString?.(),
               }}
+              avarageSell={avarageSell}
             />
           ))}
 
