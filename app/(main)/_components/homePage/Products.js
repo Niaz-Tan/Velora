@@ -1,8 +1,14 @@
+import ProductCard from "@/components/ProductCard";
 import { avgSelling } from "@/lib/avgSelling";
-import { getProducts } from "@/queries/product";
-import ProductCard from "../../../../components/ProductCard";
+import {
+  getMostSoldProduct,
+  getProducts,
+  getProductsByDate,
+} from "@/queries/product";
 const Products = async () => {
   const products = await getProducts();
+  const productsPopular = await getMostSoldProduct(3);
+  const productsNew = await getProductsByDate("new", 3);
   const avarageSell = avgSelling(products);
   return (
     <section className="px-4 py-14">
@@ -21,7 +27,18 @@ const Products = async () => {
 
         {/* GRID */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
-          {products.map((product) => (
+          {productsPopular.map((product) => (
+            <ProductCard
+              key={product._id?.toString()}
+              product={{
+                ...product,
+                _id: product._id?.toString(),
+                category: product.category?.toString?.(),
+              }}
+              avarageSell={avarageSell}
+            />
+          ))}
+          {productsNew.map((product) => (
             <ProductCard
               key={product._id?.toString()}
               product={{
@@ -50,6 +67,19 @@ const Products = async () => {
 
             <button className="mt-8 cursor-pointer rounded-full bg-[#7A6A53] px-8 py-4 text-sm font-medium text-white transition hover:bg-[#665744]">
               Build Custom Order
+            </button>
+          </div>
+          <div className="flex min-h-[620px] flex-col items-center justify-center rounded-3xl border border-[#CBB89D] bg-[#FFFDF8] p-10 text-center">
+            <h3 className="mt-8 text-2xl font-semibold text-[#2B2B2B]">
+              All products
+            </h3>
+
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-[#6F6A63]">
+              Click To see more product ➡️
+            </p>
+
+            <button className="mt-8 cursor-pointer rounded-full bg-[#7A6A53] px-8 py-4 text-sm font-medium text-white transition hover:bg-[#665744]">
+              View More
             </button>
           </div>
         </div>

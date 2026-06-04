@@ -35,11 +35,11 @@ export default function ProductCard({ product, avarageSell }) {
               </span>
             )}
 
-            {product.isFeatured && (
+            {/* {product.isFeatured && (
               <span className="inline-flex w-fit rounded-full bg-purple-500 px-3 py-1 text-[10px] font-semibold text-white shadow-sm">
                 Featured
               </span>
-            )}
+            )} */}
 
             {isBestSeller && (
               <span className="inline-flex w-fit rounded-full bg-pink-500 px-3 py-1 text-[10px] font-semibold text-white shadow-sm">
