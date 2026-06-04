@@ -51,7 +51,7 @@ const Products = async () => {
           ))}
 
           {/* CUSTOM PRODUCT */}
-          <div className="flex min-h-[620px] flex-col items-center justify-center rounded-3xl border border-dashed border-[#CBB89D] bg-[#FFFDF8] p-10 text-center">
+          <div className="flex min-h-155 flex-col items-center justify-center rounded-3xl border border-dashed border-[#CBB89D] bg-[#FFFDF8] p-10 text-center">
             <div className="rounded-full bg-[#F5EFE4] p-6">
               <span className="text-4xl">✨</span>
             </div>
@@ -69,7 +69,7 @@ const Products = async () => {
               Build Custom Order
             </button>
           </div>
-          <div className="flex min-h-[620px] flex-col items-center justify-center rounded-3xl border border-[#CBB89D] bg-[#FFFDF8] p-10 text-center">
+          <div className="flex min-h-155 flex-col items-center justify-center rounded-3xl border border-[#CBB89D] bg-[#FFFDF8] p-10 text-center">
             <h3 className="mt-8 text-2xl font-semibold text-[#2B2B2B]">
               All products
             </h3>
