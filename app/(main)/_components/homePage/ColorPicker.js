@@ -6,7 +6,7 @@ const ColorPicker = ({ colors = [] }) => {
   const [selectedColor, setSelectedColor] = useState(colors[0] || "");
 
   return (
-    <div className="mt-5 flex items-center justify-between">
+    <div className="flex flex-col md:flex-row items-center justify-between">
       <p className="text-lg font-semibold">Select color</p>
 
       <div className="flex items-center gap-3">
