@@ -15,7 +15,7 @@ export default function ProductCard({ product, avarageSell }) {
     <div className="group flex h-full flex-col rounded-2xl border border-[#E8DFD1] bg-[#FFFDF8] p-3 sm:p-4 transition hover:shadow-lg">
       {/* IMAGE */}
       <div className="relative overflow-hidden rounded-xl bg-[#F5EFE4]">
-        <div className="relative aspect-[4/4.5] w-full">
+        <div className="relative aspect-4/4.5 w-full">
           <Link href={`/products/${product.slug}`}>
             <Image
               src={product.images?.[0] || "/placeholder-product.jpg"}
@@ -81,7 +81,7 @@ export default function ProductCard({ product, avarageSell }) {
         </h3>
 
         {/* DESCRIPTION */}
-        <p className="line-clamp-2 text-[11px] sm:text-xs text-[#6F6A63]">
+        <p className="hidden md:flex line-clamp-2 text-[11px] sm:text-xs text-[#6F6A63]">
           {product.description}
         </p>
 
@@ -104,7 +104,7 @@ export default function ProductCard({ product, avarageSell }) {
 
         {/* COLORS */}
         {product.colors?.length > 0 && (
-          <div className="pt-1">
+          <div className="pt-1 hidden md:flex flex-col">
             <ColorPicker colors={product.colors} />
           </div>
         )}

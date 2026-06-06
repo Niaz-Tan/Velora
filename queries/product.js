@@ -1,26 +1,39 @@
+import "@/model/category-model";
+import "@/model/product-model";
 import { Product } from "@/model/product-model";
 import { connectDB } from "@/service/mongo";
 
-/**
- * Get all products (optional limit)
- */
-export const getProducts = async (limit) => {
-  try {
-    await connectDB();
+import { Category } from "@/model/category-model";
 
-    let query = Product.find().lean();
+export const getProducts = async (filters = {}) => {
+  await connectDB();
 
-    if (limit) {
-      query = query.limit(limit);
+  const { category, sort } = filters;
+
+  let queryObj = {};
+
+  if (category) {
+    const catDoc = await Category.findOne({ slug: category });
+
+    if (catDoc) {
+      queryObj.categoryId = catDoc._id;
     }
-
-    return await query;
-  } catch (error) {
-    console.error("Failed to get products:", error);
-    throw error;
   }
-};
 
+  let query = Product.find(queryObj).populate("categoryId");
+
+  if (sort === "low") {
+    query = query.sort({ price: 1 });
+  } else if (sort === "high") {
+    query = query.sort({ price: -1 });
+  } else if (sort === "oldest") {
+    query = query.sort({ createdAt: 1 });
+  } else {
+    query = query.sort({ createdAt: -1 });
+  }
+
+  return await query.lean();
+};
 /**
  * Get most sold products (optional limit)
  */
