@@ -14,7 +14,7 @@ export default function ProductCard({ product, avarageSell }) {
     <div className="group rounded-3xl border border-[#E8DFD1] bg-[#FFFDF8] p-4 transition hover:shadow-lg">
       {/* IMAGE */}
       <div className="relative overflow-hidden rounded-2xl bg-[#F5EFE4]">
-        <div className="relative aspect-[4/4.5]">
+        <div className="relative aspect-4/4.5">
           <Link href={`/products/${product.slug}`}>
             <Image
               src={product.images?.[0] || "/placeholder-product.jpg"}

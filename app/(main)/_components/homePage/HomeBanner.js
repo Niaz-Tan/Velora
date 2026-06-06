@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const HomeBanner = () => {
   return (
-    <section className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
+    <section className="relative w-full h-75 sm:h-100 md:h-125 lg:h-150 overflow-hidden">
       <Image
         src="/pouchBanner.jpg"
         alt="Crochet products banner"
@@ -34,11 +34,11 @@ const HomeBanner = () => {
             </p>
 
             <div className="mt-5 sm:mt-6 flex flex-wrap gap-3">
-              <button className="rounded-lg bg-white px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base font-semibold text-black transition hover:scale-105">
+              <button className="rounded-lg bg-white px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base font-semibold text-black transition hover:scale-105 cursor-pointer">
                 Shop Now
               </button>
 
-              <button className="rounded-lg border border-white px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base font-semibold text-white transition hover:bg-white hover:text-black">
+              <button className="rounded-lg border border-white px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base font-semibold text-white transition hover:bg-white hover:text-black cursor-pointer">
                 Custom Order
               </button>
             </div>
