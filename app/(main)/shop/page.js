@@ -11,7 +11,7 @@ export default async function ShopPage({ searchParams }) {
   const params = await searchParams;
 
   const category = params?.category || "";
-  const sort = params?.sort || "newest";
+  const sort = params?.sort || "low";
 
   const products = await getProducts({
     category,
@@ -20,7 +20,7 @@ export default async function ShopPage({ searchParams }) {
 
   return (
     <main>
-      <section className="mx-auto max-w-7xl px-4 py-10">
+      <section className="mx-auto max-w-7xl lg:max-w-[80vw] px-4 py-10">
         {/* MOBILE */}
         <div className="mb-6 flex justify-between lg:hidden">
           <MobileFilters categories={categories} />

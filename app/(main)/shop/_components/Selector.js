@@ -13,7 +13,7 @@ const Selector = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const currentSort = searchParams.get("sort") || "newest";
+  const currentSort = searchParams.get("sort") || "low";
 
   const handleChange = (value) => {
     const params = new URLSearchParams(searchParams.toString());
