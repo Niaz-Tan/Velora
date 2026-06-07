@@ -14,19 +14,19 @@ export default function ContactPage() {
     <main>
       {/* HERO */}
       <section className="border-b border-[#E8DFD1] bg-[#FFFDF8]">
-        <div className="mx-auto max-w-7xl px-4 py-16 text-center">
-          <span className="inline-flex rounded-full border border-[#E8DFD1] bg-white px-4 py-2 text-sm font-medium text-[#6F6A63]">
+        <div className="mx-auto max-w-7xl px-4 py-8 text-center md:py-12">
+          <span className="inline-flex rounded-full border border-[#E8DFD1] bg-white px-3 py-1.5 text-xs font-medium text-[#6F6A63] md:px-4 md:py-2 md:text-sm">
             Contact Us
           </span>
 
-          <h1 className="mt-6 text-4xl font-bold text-[#2B2B2B] md:text-5xl">
-            We'd Love To Hear From You
+          <h1 className="mt-4 text-3xl font-bold text-[#2B2B2B] md:mt-6 md:text-5xl">
+            We&apos;d Love To Hear From You
           </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-[#6F6A63]">
+          <p className="mx-auto mt-3 max-w-xl text-sm text-[#6F6A63] md:mt-5 md:max-w-2xl md:text-base">
             Have a question about a product, custom order, delivery, or anything
-            else? Contact us through your favorite platform and we'll get back
-            to you as soon as possible.
+            else? Contact us through your favorite platform and we&apos;ll get
+            back to you as soon as possible.
           </p>
         </div>
       </section>
