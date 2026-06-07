@@ -157,8 +157,8 @@ export default function ContactPage() {
 
               <p className="mt-3 text-sm leading-relaxed text-[#6F6A63]">
                 Looking for something unique? We accept custom crochet orders.
-                Send us your idea through WhatsApp or Messenger and we'll try
-                our best to make it happen.
+                Send us your idea through WhatsApp or Messenger and we&apos;ll
+                try our best to make it happen.
               </p>
 
               <Link
@@ -177,7 +177,8 @@ export default function ContactPage() {
             </h2>
 
             <p className="mt-2 text-sm text-[#6F6A63]">
-              Prefer email? Fill out the form below and we'll get back to you.
+              Prefer email? Fill out the form below and we&apos;ll get back to
+              you.
             </p>
 
             <form className="mt-8 space-y-6">
