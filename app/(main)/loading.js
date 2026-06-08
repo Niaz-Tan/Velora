@@ -11,16 +11,13 @@ export default function Loading() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 flex flex-col items-center gap-4">
             <Skeleton className="h-10 w-72 bg-[#DCCFBD]" />
-            <Skeleton className="h-4 w-[500px] max-w-full bg-[#DCCFBD]" />
-            <Skeleton className="h-4 w-[400px] max-w-full bg-[#DCCFBD]" />
+            <Skeleton className="h-4 w-125 max-w-full bg-[#DCCFBD]" />
+            <Skeleton className="h-4 w-100 max-w-full bg-[#DCCFBD]" />
           </div>
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
             {Array.from({ length: 8 }).map((_, i) => (
-              <Skeleton
-                key={i}
-                className="h-[620px] rounded-2xl bg-[#DCCFBD]"
-              />
+              <Skeleton key={i} className="h-155 rounded-2xl bg-[#DCCFBD]" />
             ))}
           </div>
         </div>
