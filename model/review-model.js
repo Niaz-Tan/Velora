@@ -4,7 +4,7 @@ const ReviewSchema = new mongoose.Schema(
   {
     customerId: {
       type: String,
-      ref: "Customer",
+      ref: "User",
       required: true,
     },
 

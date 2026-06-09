@@ -1,7 +1,10 @@
 import mongoose from "mongoose";
 
-const CustomerSchema = new mongoose.Schema(
+const UserSchema = new mongoose.Schema(
   {
+    _id: {
+      type: String,
+    },
     name: {
       type: String,
       required: true,
@@ -36,5 +39,4 @@ const CustomerSchema = new mongoose.Schema(
   },
 );
 
-export const Customer =
-  mongoose.models.Customer || mongoose.model("Customer", CustomerSchema);
+export const User = mongoose.models.User || mongoose.model("User", UserSchema);

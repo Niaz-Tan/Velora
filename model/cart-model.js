@@ -26,7 +26,7 @@ const CartSchema = new mongoose.Schema(
   {
     customer: {
       type: String,
-      ref: "Customer",
+      ref: "User",
       required: true,
       unique: true,
     },
