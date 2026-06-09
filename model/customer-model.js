@@ -23,6 +23,12 @@ const CustomerSchema = new mongoose.Schema(
       type: String,
       default: "",
     },
+
+    role: {
+      type: String,
+      enum: ["customer", "admin", "seller", "support", "super_admin"],
+      default: "customer",
+    },
   },
   {
     timestamps: true,
