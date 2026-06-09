@@ -11,7 +11,8 @@ const CustomerSchema = new mongoose.Schema(
     email: {
       type: String,
       lowercase: true,
-      default: "",
+      unique: true,
+      sparse: true,
     },
 
     phone: {
