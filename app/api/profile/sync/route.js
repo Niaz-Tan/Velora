@@ -3,7 +3,7 @@ import { User } from "@/model/user-model";
 export async function POST(req) {
   const body = await req.json();
 
-  const { id, name, email, image } = body;
+  const { id, name, email, phone } = body;
 
   if (!id) {
     return Response.json({ error: "Missing user id" }, { status: 400 });
@@ -15,7 +15,8 @@ export async function POST(req) {
       _id: id,
       name,
       email,
-      image: image || `https://api.dicebear.com/9.x/identicon/svg?seed=${name}`,
+      phone: phone || "",
+      image: `https://api.dicebear.com/9.x/identicon/svg?seed=${name}`,
       role: "customer",
     },
     { upsert: true, new: true },
