@@ -5,6 +5,7 @@ import {
   getProducts,
   getProductsByDate,
 } from "@/queries/product";
+import Link from "next/link";
 const Products = async () => {
   const products = await getProducts();
   const productsPopular = await getMostSoldProduct(3);
@@ -51,7 +52,10 @@ const Products = async () => {
           ))}
 
           {/* CUSTOM PRODUCT */}
-          <div className="flex min-h-155 flex-col items-center justify-center rounded-3xl border border-dashed border-[#CBB89D] bg-[#FFFDF8] p-10 text-center">
+          <Link
+            href={"/custom"}
+            className="flex min-h-155 flex-col items-center justify-center rounded-3xl border border-dashed border-[#CBB89D] bg-[#FFFDF8] p-10 text-center"
+          >
             <div className="rounded-full bg-[#F5EFE4] p-6">
               <span className="text-4xl">✨</span>
             </div>
@@ -68,8 +72,11 @@ const Products = async () => {
             <button className="mt-8 cursor-pointer rounded-full bg-[#7A6A53] px-8 py-4 text-sm font-medium text-white transition hover:bg-[#665744]">
               Build Custom Order
             </button>
-          </div>
-          <div className="flex min-h-155 flex-col items-center justify-center rounded-3xl border border-[#CBB89D] bg-[#FFFDF8] p-10 text-center">
+          </Link>
+          <Link
+            href={"/shop"}
+            className="flex min-h-155 flex-col items-center justify-center rounded-3xl border border-[#CBB89D] bg-[#FFFDF8] p-10 text-center"
+          >
             <h3 className="mt-8 text-2xl font-semibold text-[#2B2B2B]">
               All products
             </h3>
@@ -81,7 +88,7 @@ const Products = async () => {
             <button className="mt-8 cursor-pointer rounded-full bg-[#7A6A53] px-8 py-4 text-sm font-medium text-white transition hover:bg-[#665744]">
               View More
             </button>
-          </div>
+          </Link>
         </div>
       </div>
     </section>

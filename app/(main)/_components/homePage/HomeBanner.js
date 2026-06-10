@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const HomeBanner = () => {
   return (
@@ -34,13 +35,19 @@ const HomeBanner = () => {
             </p>
 
             <div className="mt-5 sm:mt-6 flex flex-wrap gap-3">
-              <button className="rounded-lg bg-white px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base font-semibold text-black transition hover:scale-105 cursor-pointer">
+              <Link
+                href={"/shop"}
+                className="rounded-lg bg-white px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base font-semibold text-black transition hover:scale-105 cursor-pointer"
+              >
                 Shop Now
-              </button>
+              </Link>
 
-              <button className="rounded-lg border border-white px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base font-semibold text-white transition hover:bg-white hover:text-black cursor-pointer">
+              <Link
+                href={"/custom"}
+                className="rounded-lg border border-white px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base font-semibold text-white transition hover:bg-white hover:text-black cursor-pointer"
+              >
                 Custom Order
-              </button>
+              </Link>
             </div>
           </div>
         </div>
