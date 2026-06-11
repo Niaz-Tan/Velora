@@ -42,18 +42,89 @@ export default function Icons() {
 
   return (
     <div className="hidden md:flex items-center gap-2">
-      {/* Cart */}
-      <button className="p-2 rounded-full hover:bg-[#F7F2EA] relative">
+      {/* CART */}
+      <button
+        onClick={() => router.push("/cart")}
+        className="p-2 rounded-full hover:bg-[#F7F2EA] relative transition"
+      >
         <ShoppingCart size={19} />
+
         <span className="absolute -top-1 -right-1 text-[10px] bg-black text-white w-4 h-4 flex items-center justify-center rounded-full">
           2
         </span>
       </button>
 
-      {/* Bell */}
-      <button className="p-2 rounded-full hover:bg-[#F7F2EA]">
-        <Bell size={19} />
-      </button>
+      {/* NOTIFICATIONS */}
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <button className="p-2 rounded-full hover:bg-[#F7F2EA] relative transition">
+            <Bell size={19} />
+
+            <span className="absolute -top-1 -right-1 text-[10px] bg-red-500 text-white w-4 h-4 flex items-center justify-center rounded-full">
+              3
+            </span>
+          </button>
+        </DropdownMenuTrigger>
+
+        <DropdownMenuContent
+          align="end"
+          className="w-80 p-0 rounded-2xl overflow-hidden bg-white"
+        >
+          {/* HEADER */}
+          <div className="px-4 py-3 border-b bg-[#FFFDF8]">
+            <h3 className="font-semibold text-[#2B2B2B]">Notifications</h3>
+
+            <p className="text-xs text-[#6F6A63]">
+              You have 3 unread notifications
+            </p>
+          </div>
+
+          {/* LIST */}
+          <div className="max-h-[350px] overflow-y-auto">
+            <DropdownMenuItem className="cursor-pointer p-4 flex flex-col items-start gap-1">
+              <span className="font-medium text-[#2B2B2B]">
+                Order Shipped 🚚
+              </span>
+
+              <span className="text-xs text-[#6F6A63]">
+                Your Lavender Keychain is on the way.
+              </span>
+            </DropdownMenuItem>
+
+            <DropdownMenuItem className="cursor-pointer p-4 flex flex-col items-start gap-1">
+              <span className="font-medium text-[#2B2B2B]">
+                New Collection ✨
+              </span>
+
+              <span className="text-xs text-[#6F6A63]">
+                Check out our latest crochet arrivals.
+              </span>
+            </DropdownMenuItem>
+
+            <DropdownMenuItem className="cursor-pointer p-4 flex flex-col items-start gap-1">
+              <span className="font-medium text-[#2B2B2B]">
+                Welcome to Velora 💖
+              </span>
+
+              <span className="text-xs text-[#6F6A63]">
+                Thanks for creating your account.
+              </span>
+            </DropdownMenuItem>
+          </div>
+
+          <DropdownMenuSeparator />
+
+          {/* FOOTER */}
+          <div className="p-3">
+            <button
+              onClick={() => router.push("/notifications")}
+              className="w-full rounded-xl bg-[#2B2B2B] py-2 text-sm text-white hover:bg-black transition"
+            >
+              View All Notifications
+            </button>
+          </div>
+        </DropdownMenuContent>
+      </DropdownMenu>
 
       {/* PROFILE */}
       {loading ? (
@@ -71,12 +142,12 @@ export default function Icons() {
                     `https://api.dicebear.com/9.x/identicon/svg?seed=${user.name}`
                   }
                 />
+
                 <AvatarFallback className="bg-gray-100 text-sm font-medium">
                   {user.name?.charAt(0).toUpperCase()}
                 </AvatarFallback>
               </Avatar>
 
-              {/* small online dot */}
               <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border-2 border-white rounded-full" />
             </div>
           </DropdownMenuTrigger>
@@ -85,9 +156,9 @@ export default function Icons() {
             align="end"
             className="w-56 p-1 rounded-xl shadow-lg border bg-white"
           >
-            {/* user header */}
             <div className="px-3 py-2">
               <p className="text-sm font-semibold leading-none">{user.name}</p>
+
               <p className="text-xs text-gray-500 truncate">{user.email}</p>
             </div>
 
