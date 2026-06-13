@@ -33,7 +33,7 @@ export default function SignUpPage() {
         }),
       });
 
-      router.push("/test");
+      router.push("/");
     }
   }
 
