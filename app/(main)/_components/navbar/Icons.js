@@ -80,7 +80,7 @@ export default function Icons() {
           </div>
 
           {/* LIST */}
-          <div className="max-h-[350px] overflow-y-auto">
+          <div className="max-h-87.5 overflow-y-auto">
             <DropdownMenuItem className="cursor-pointer p-4 flex flex-col items-start gap-1">
               <span className="font-medium text-[#2B2B2B]">
                 Order Shipped 🚚
