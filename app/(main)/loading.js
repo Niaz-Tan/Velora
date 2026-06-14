@@ -3,7 +3,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 export default function Loading() {
   return (
     <div>
-      {/* Hero Banner */}
+      
       <Skeleton className="h-75 sm:h-100 md:h-125 lg:h-150 w-full bg-[#DCCFBD]" />
 
       {/* Products Section */}
